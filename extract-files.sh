@@ -105,6 +105,9 @@ function blob_fixup {
 	vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc)
             sed -i 's/"sea"/"fleur"/' "$2"
             ;;
+        vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service)
+            "$PATCHELF" --add-needed "libstagefright_foundation-v33.so" "$2"
+            ;;
     esac
 }
 
