@@ -102,7 +102,7 @@ on fs
     write /proc/bootprof "INIT:fs"
 
     wait_for_prop hwservicemanager.ready "true"
-    start vendor.boot-hal-1-2
+    start vendor.boot-default
 
     # mount fstab
     write /proc/bootprof "INIT:Mount_START"
