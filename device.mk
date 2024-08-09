@@ -409,7 +409,6 @@ PRODUCT_PACKAGES += \
 
 # Root Dir
 PRODUCT_PACKAGES += \
-    init.ago.rc \
     init.cgroup.rc \
     init.connectivity.common.rc \
     init.connectivity.rc \
@@ -420,8 +419,10 @@ PRODUCT_PACKAGES += \
     init.sensor_1_0.rc \
     init.stnfc.rc \
     init_connectivity.rc \
+    init.zram.rc \
     fstab.mt6781 \
     fstab.mt6781.ramdisk \
+    fstab.zram \
     ueventd.mt6781.rc
 
 # Secure Element

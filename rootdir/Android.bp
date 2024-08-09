@@ -5,8 +5,8 @@
 //
 
 prebuilt_etc {
-    name: "init.ago.rc",
-    src: "etc/init/hw/init.ago.rc",
+    name: "init.zram.rc",
+    src: "etc/init/hw/init.zram.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
