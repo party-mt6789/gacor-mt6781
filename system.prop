@@ -41,6 +41,19 @@ persist.radio.calls.on.ims=1
 vendor.rild.libargs=-d /dev/ttyC0
 vendor.rild.libpath=mtk-ril.so
 
+# Misc
+ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b 
+ro.netflix.signup=1
+
+# Surface Flinger
+debug.sf.high_fps.early.app.duration=11000000
+debug.sf.high_fps.early.sf.duration=22000000
+debug.sf.high_fps.earlyGl.app.duration=11000000
+debug.sf.high_fps.earlyGl.sf.duration=22000000
+debug.sf.high_fps.hwc.min.duration=17000000
+debug.sf.high_fps.late.app.duration=11000000
+debug.sf.high_fps.late.sf.duration=22000000
+
 # WiFi
 ro.wifi.channels=
 wifi.direct.interface=p2p0
