@@ -5,10 +5,6 @@ vendor/lib/libaedv.so
 vendor/lib64/libaedv.so
 
 # Audio
-vendor/bin/atcid
-vendor/bin/audiocmdservice_atci
-vendor/etc/init/atcid.rc
-vendor/etc/init/audiocmdservice_atci.rc
 vendor/lib/hw/audio.primary.mt6781.so
 vendor/lib/hw/audio.r_submix.mt6781.so
 vendor/lib/hw/sound_trigger.primary.default.so
@@ -1277,16 +1273,9 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.1-service.beanpod
-vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
 vendor/bin/bp_kmsetkey_ca
 vendor/etc/init/android.hardware.keymaster@4.1-service.beanpod.rc
-vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
 vendor/etc/init/microtrust.bp_kmsetkey_ca.rc
-vendor/lib64/hw/kmsetkey.beanpod.so
-vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.0.so
-vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
-vendor/lib64/libkmsetkey.so
 
 # Media
 vendor/bin/vpud
@@ -1631,16 +1620,14 @@ vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 # Radio (MTK-IMS)
 system_ext/bin/vtservice
 system_ext/etc/init/init.vtservice.rc
--system_ext/framework/mediatek-common.jar
--system_ext/framework/mediatek-ims-base.jar
--system_ext/framework/mediatek-services.jar
--system_ext/framework/mediatek-framework.jar
--system_ext/framework/mediatek-ims-common.jar
--system_ext/framework/mediatek-telecom-common.jar
--system_ext/framework/mediatek-telephony-base.jar
--system_ext/framework/mediatek-telephony-common.jar
--system_ext/framework/mediatek-ims-extension-plugin.jar
--system_ext/framework/mediatek-carrier-config-manager.jar
+-system_ext/framework/mediatek-common.jar:system/framework/mediatek-common.jar
+-system_ext/framework/mediatek-ims-base.jar:system/framework/mediatek-ims-base.jar
+-system_ext/framework/mediatek-framework.jar:system/framework/mediatek-framework.jar
+-system_ext/framework/mediatek-ims-common.jar:system/framework/mediatek-ims-common.jar
+-system_ext/framework/mediatek-telecom-common.jar:system/framework/mediatek-telecom-common.jar
+-system_ext/framework/mediatek-telephony-base.jar:system/framework/mediatek-telephony-base.jar
+-system_ext/framework/mediatek-telephony-common.jar:system/framework/mediatek-telephony-common.jar
+-system_ext/framework/mediatek-ims-extension-plugin.jar:system/framework/mediatek-ims-extension-plugin.jar
 system_ext/lib/libmtk_vt_wrapper.so
 system_ext/lib/libmtkperf_client.so
 system_ext/lib/libvcodec_cap.so
@@ -1665,7 +1652,7 @@ system_ext/lib64/libvsim-adaptor-client.so
 system_ext/lib64/libvt_avsync.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
--system_ext/priv-app/ImsService/ImsService.apk
+-system_ext/priv-app/ImsService/ImsService.apk:system/priv-app/ImsService/ImsService.apk
 
 # Secure Element
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek

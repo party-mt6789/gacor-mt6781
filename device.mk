@@ -88,7 +88,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor
@@ -101,7 +100,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcamera_metadata.vendor \
     libexif.vendor \
-    libpng.vendor \
     libpng.vendor
 
 PRODUCT_PACKAGES += \
@@ -207,16 +205,14 @@ PRODUCT_BOOT_JARS += \
     mediatek-common \
     mediatek-ims-base \
     mediatek-ims-common \
-    mediatek-services \
     mediatek-framework \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common \
-    mediatek-ims-extension-plugin \
-    mediatek-carrier-config-manager
+    mediatek-ims-extension-plugin
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
 
 PRODUCT_PACKAGES += \
     libshim_sink \
@@ -310,6 +306,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc,$(TARGET_COPY_OUT_VENDOR)/etc)
 
+# Optimizations
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+
 # Overlays
 PRODUCT_PACKAGES += \
     ApertureOverlaySeur \
@@ -401,7 +403,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.6.vendor:64
 
 PRODUCT_PACKAGES += \
-    libruy.vendor:64
+    libruy.vendor:64 \
 
 # Recovery
 PRODUCT_PACKAGES += \
@@ -478,28 +480,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
-
-# Optimizations
-
-# Speed profile services and wifi-service to reduce RAM and storage.
-PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
-
-# Always preopt extracted APKs to prevent extracting out of the APK for gms
-# modules.
-PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
-
-# Use a profile based boot image for this device. Note that this is currently a
-# generic profile and not Android Go optimized.
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
-
-# Do not generate libartd.
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Inherit the  proprietary files
 $(call inherit-product, vendor/xiaomi/seur/seur-vendor.mk)
