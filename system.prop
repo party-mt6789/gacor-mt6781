@@ -19,6 +19,7 @@ ro.charger.enable_suspend=true
 
 # Misc
 Build.BRAND=MTK
+ro.logd.kernel=false
 
 # MTK
 ro.vendor.mtk_cta_set=1
