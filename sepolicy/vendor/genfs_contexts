@@ -1,0 +1,31 @@
+# Fingerprint
+genfscon sysfs /devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/irq							u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/wakeup_enable						u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/modalias							u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/authen_fd/performance                                     u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/clk_enable						u:object_r:sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/fingerprint                                                                                    u:object_r:sysfs_fingerprint:s0
+
+# Graphics
+genfscon sysfs /devices/platform/13040000.mali
+
+# Health
+genfscon sysfs /devices/platform/mt_charger/power_supply/ac                                                                     u:object_r:vendor_sysfs_ac_supply:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply/usb                                                                    u:object_r:vendor_sysfs_usb_supply:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply/main                                                                   u:object_r:vendor_sysfs_main_supply:s0
+genfscon sysfs /devices/platform/mt_charger/power_supply/charger                                                                u:object_r:vendor_sysfs_charger_supply:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery                                                                   u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/battery/power_supply/bms	                                                                u:object_r:vendor_sysfs_bms_supply:s0
+genfscon sysfs /devices/platform/11004000.i2c7/i2c-7/7-0055/power_supply/parallel                                               u:object_r:vendor_sysfs_parallel_supply:s0
+genfscon sysfs /devices/platform/1101a000.i2c7/i2c-7/7-0051/power_supply							u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/maxim_ds28e16/power_supply/batt_verify								u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/maxim_ds28e16/power_supply/batt_verify/type	
+
+# Performance
+genfscon proc /sys/kernel/sched_stune_task_threshold                                                                            u:object_r:proc_sched_stune:s0
+
+# Touchpanel
+genfscon sysfs /touchpanel                                                                                                      u:object_r:sysfs_touchpanel:s0
+
+# Vibrator
+genfscon sysfs /devices/platform/aw8622
