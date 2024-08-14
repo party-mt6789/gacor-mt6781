@@ -12,9 +12,6 @@ vendor/etc/init/init.batterysecret.rc
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/bin/autobt
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
-vendor/firmware/BT_FW.cfg
-vendor/firmware/soc2_2_ram_bt_2_1_hdr.bin
-vendor/firmware/soc2_2_ram_bt_2a_1_hdr.bin
 vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
 vendor/lib/libbluetooth_mtk.so
 vendor/lib/libbluetoothem_mtk.so
@@ -208,78 +205,6 @@ vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
-
-# Firmware
-vendor/firmware/aw87xxx_acf.bin
-vendor/firmware/aw8622_high_f0_cali_cfg.bin
-vendor/firmware/aw8622_high_f0_LONG_cfg.bin
-vendor/firmware/aw8622_high_f0_M_cfg.bin
-vendor/firmware/aw8622_high_f0_need_setup_M_cfg.bin
-vendor/firmware/aw8622_high_f0_need_setup_Q_cfg.bin
-vendor/firmware/aw8622_high_f0_need_setup_Z_cfg.bin
-vendor/firmware/aw8622_high_f0_Q_cfg.bin
-vendor/firmware/aw8622_high_f0_Z_cfg.bin
-vendor/firmware/aw8622_low_f0_cali_cfg.bin
-vendor/firmware/aw8622_low_f0_LONG_cfg.bin
-vendor/firmware/aw8622_low_f0_M_cfg.bin
-vendor/firmware/aw8622_low_f0_need_setup_M_cfg.bin
-vendor/firmware/aw8622_low_f0_need_setup_Q_cfg.bin
-vendor/firmware/aw8622_low_f0_need_setup_Z_cfg.bin
-vendor/firmware/aw8622_low_f0_Q_cfg.bin
-vendor/firmware/aw8622_low_f0_Z_cfg.bin
-vendor/firmware/aw8622_mid_f0_cali_cfg.bin
-vendor/firmware/aw8622_mid_f0_LONG_cfg.bin
-vendor/firmware/aw8622_mid_f0_M_cfg.bin
-vendor/firmware/aw8622_mid_f0_need_setup_M_cfg.bin
-vendor/firmware/aw8622_mid_f0_need_setup_Q_cfg.bin
-vendor/firmware/aw8622_mid_f0_need_setup_Z_cfg.bin
-vendor/firmware/aw8622_mid_f0_Q_cfg.bin
-vendor/firmware/aw8622_mid_f0_Z_cfg.bin
-vendor/firmware/Conf_MultipleTest.ini
-vendor/firmware/fm_cust.cfg
-vendor/firmware/focaltech_ts_fw_samsung.bin
-vendor/firmware/fs1815.fsm
-vendor/firmware/gt9896s_cfg_6781v01_1080x2280.bin
-vendor/firmware/gt9896s_cfg_6781v01_1080x2300.bin
-vendor/firmware/gt9896s_cfg_6789v01.bin
-vendor/firmware/gt9896s_cfg_6833v01.bin
-vendor/firmware/gt9896s_cfg_6853v01.bin
-vendor/firmware/gt9896s_cfg_6855v01.bin
-vendor/firmware/gt9896s_cfg_6873v01.bin
-vendor/firmware/gt9896s_cfg_6877v01_1080x2280.bin
-vendor/firmware/gt9896s_cfg_6877v01_1080x2300.bin
-vendor/firmware/gt9896s_cfg_6879v01.bin
-vendor/firmware/gt9896s_cfg_6893v01.bin
-vendor/firmware/gt9896s_cfg_6893v02.bin
-vendor/firmware/gt9896s_cfg_6893v03.bin
-vendor/firmware/gt9896s_cfg_6893v04.bin
-vendor/firmware/gt9896s_cfg_6893v05.bin
-vendor/firmware/gt9896s_cfg_6895v01.bin
-vendor/firmware/gt9896s_cfg_6983v01.bin
-vendor/firmware/gt9896s_firmware_6781v01_1080x2280.bin
-vendor/firmware/gt9896s_firmware_6781v01_1080x2300.bin
-vendor/firmware/gt9896s_firmware_6789v01.bin
-vendor/firmware/gt9896s_firmware_6833v01.bin
-vendor/firmware/gt9896s_firmware_6853v01.bin
-vendor/firmware/gt9896s_firmware_6855v01.bin
-vendor/firmware/gt9896s_firmware_6873v00.bin
-vendor/firmware/gt9896s_firmware_6877v01_1080x2280.bin
-vendor/firmware/gt9896s_firmware_6877v01_1080x2300.bin
-vendor/firmware/gt9896s_firmware_6879v01.bin
-vendor/firmware/gt9896s_firmware_6893v01.bin
-vendor/firmware/gt9896s_firmware_6893v02.bin
-vendor/firmware/gt9896s_firmware_6893v03.bin
-vendor/firmware/gt9896s_firmware_6893v04.bin
-vendor/firmware/gt9896s_firmware_6893v05.bin
-vendor/firmware/gt9896s_firmware_6895v01.bin
-vendor/firmware/gt9896s_firmware_6983v01.bin
-vendor/firmware/mt6631_fm_v1_coeff.bin
-vendor/firmware/mt6631_fm_v1_patch.bin
-vendor/firmware/mt6635_fm_v1_coeff.bin
-vendor/firmware/mt6635_fm_v1_patch.bin
-vendor/firmware/remoteproc_scp
-vendor/firmware/soc2_2_ram_mcu_2_1_hdr.bin
-vendor/firmware/soc2_2_ram_mcu_2a_1_hdr.bin
 
 # Fuelgauge
 vendor/bin/fuelgauged
@@ -487,9 +412,6 @@ vendor/lib64/nwk_opt_imp.so
 vendor/lib64/libmt.so
 vendor/lib64/libmvpu_config_data.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
-
-# NFC
-vendor/firmware/st21nfc_fw7.bin
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
@@ -835,10 +757,3 @@ vendor/lib64/libifcutils_mtk.so
 vendor/lib64/meta_wifi_data.so
 vendor/lib64/libwpfa.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
-
-# WiFi (Firmware)
-vendor/firmware/WMT_SOC.cfg
-vendor/firmware/WIFI_RAM_CODE_soc2_2_2_1.bin
-vendor/firmware/WIFI_RAM_CODE_soc2_2_2a_1.bin
-vendor/firmware/soc2_2_ram_wifi_2_1_hdr.bin
-vendor/firmware/soc2_2_ram_wifi_2a_1_hdr.bin
