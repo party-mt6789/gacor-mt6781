@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/mt6781-common
+COMMON_PATH := device/xiaomi/mt6781-common
 
 # Dalvik VM Configuration
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
@@ -425,7 +425,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES := \
-    $(DEVICE_PATH) \
+    $(COMMON_PATH) \
     hardware/xiaomi \
     hardware/mediatek
 

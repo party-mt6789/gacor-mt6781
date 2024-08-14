@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/mt6781-common
+COMMON_PATH := device/xiaomi/mt6781-common
 
 # Broken
 BUILD_BROKEN_DUP_RULES := true
@@ -67,8 +67,8 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.selinux=permissive
 
 # Kernel (Prebuilt)
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-modules/*.ko)
+BOARD_PREBUILT_DTBOIMAGE := $(COMMON_PATH)/prebuilt/dtbo.img
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard device/xiaomi/mt6781-modules/*.ko)
 
 # Partitions
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -93,14 +93,14 @@ BOARD_VENDOR := xiaomi
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-ext.cpp
+TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-ext.cpp
 
 # Props
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6781
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt6781
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -110,7 +110,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # SEPolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # SPL
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
@@ -118,9 +118,9 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     vendor/aosp/config/device_framework_matrix.xml \
-    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
+    $(COMMON_PATH)/configs/vintf/framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
 # VNDK
 BOARD_VNDK_VERSION := 33
