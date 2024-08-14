@@ -1,15 +1,12 @@
 # MTK project .rc configure
 
-on early-init
-    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules trace_mmstat.ko
-
 on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
     mkdir /storage/usbotg 0700 root root
 
 on post-fs-data
 
-#Camera
+    # Camera
     chmod 0660 /dev/MAINAF
     chown system camera /dev/MAINAF
 
@@ -45,7 +42,7 @@ on post-fs-data
     chown system system /data/vendor/camera/com.xiaomi.dcal.wu.data
     restorecon_recursive /mnt/vendor/persist/camera
 
-# for intsense bokeh use
+    # Intsense bokeh use
     mkdir /data/vendor/camera/model 0777 system camera
     mkdir /data/vendor/camera/model/dof_model 0777 system camera
     mkdir /data/vendor/camera/model/rt_model 0777 system camera
@@ -63,9 +60,11 @@ on post-fs-data
     chmod 0666 /data/vendor/camera/model/rt_model/preview_model
     chmod 0666 /data/vendor/camera/model/rt_model/preview_policy
     chmod 0666 /data/vendor/camera/com.xiaomi.dcal.wu.data
-# for mibokeh use
+
+    # Mi Bokeh
     mkdir /data/vendor/camera/mibokeh 0776 system camera
-#SMB
+
+    #SMB
     chown system system /proc/smb/ScreenComm
     chmod 0660 /proc/smb/ScreenComm
 
@@ -100,8 +99,6 @@ on boot
     chmod 0664 /sys/class/drm/card0-DSI-1/disp_param
     chown system system /sys/bus/platform/devices/fingerprint/fingerdown_wait
 
-
-
 on init
     # Refer to http://source.android.com/devices/tech/storage/index.html
     # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
@@ -116,7 +113,7 @@ service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/
     class late_start
     disabled
 
-# start mmstat
+# Start mmstat
 on property:sys.boot_completed=1
     mkdir /sys/kernel/tracing/instances/mmstat 711
     write /sys/kernel/tracing/instances/mmstat/tracing_on 0
