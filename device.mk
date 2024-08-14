@@ -286,6 +286,15 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Overlays
+PRODUCT_PACKAGES += \
+    ApertureOverlayMT6781 \
+    CarrierConfigOverlayMT6781 \
+    FrameworksResOverlayMT6781 \
+    SettingsResOverlayMT6781 \
+    SystemUIOverlayMT6781 \
+    TelephonyOverlayMT6781 \
+    WiFiOverlayMT6781
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
