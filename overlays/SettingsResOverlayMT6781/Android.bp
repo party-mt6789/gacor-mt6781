@@ -5,7 +5,7 @@
 //
 
 runtime_resource_overlay {
-    name: "CarrierConfigOverlaySeur",
+    name: "SettingsResOverlayMT6781",
     sdk_version: "current",
     resource_dirs: ["res"],
     vendor: true,

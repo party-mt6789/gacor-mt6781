@@ -7,7 +7,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),seur)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(CLEAR_VARS)
 
@@ -26,5 +25,3 @@ $(VULKAN_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) touch $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(VULKAN_SYMLINKS)
-
-endif

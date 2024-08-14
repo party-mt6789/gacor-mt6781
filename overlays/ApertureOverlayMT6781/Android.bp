@@ -4,7 +4,7 @@
 //
 
 runtime_resource_overlay {
-    name: "ApertureOverlaySeur",
+    name: "ApertureOverlayMT6781",
     sdk_version: "current",
     product_specific: true,
     resource_dirs: ["res"]

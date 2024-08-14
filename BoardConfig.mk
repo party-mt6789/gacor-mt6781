@@ -4,26 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/seur
+DEVICE_PATH := device/xiaomi/mt6781-common
 
 # Broken
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
-# A/B
-AB_OTA_UPDATER := true
-BOARD_USES_RECOVERY_AS_BOOT := true
-
-AB_OTA_PARTITIONS := \
-    boot \
-    dtbo \
-    system \
-    system_ext \
-    product \
-    vendor \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor
 
 # Architecture
 TARGET_ARCH := arm64
@@ -41,10 +26,9 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := fleur,fleurp,miel,mielp,sea,ocean,ksrn,ksrl,k7sr,seur
+TARGET_OTA_ASSERT_DEVICE := fleur,fleurp,miel,mielp,sea,ocean,ksrn,ksrl,k7sr
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := seur
 TARGET_NO_BOOTLOADER := true
 
 # Boot Image (Offsets)
@@ -67,14 +51,10 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_seur
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_seur
-
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/seur
+TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6781
 TARGET_KERNEL_CONFIG := mt6781_defconfig
 TARGET_KERNEL_CLANG_VERSION := r450784e
 BOARD_KERNEL_IMAGE_NAME := Image.gz
@@ -91,12 +71,6 @@ BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-modules/*.ko)
 
 # Partitions
-BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_SUPER_PARTITION_SIZE := 7516192768
-BOARD_SUPER_PARTITION_GROUPS := mediatek_dynamic_partitions
-BOARD_MEDIATEK_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor
-BOARD_MEDIATEK_DYNAMIC_PARTITIONS_SIZE := 7511998464
-
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -188,4 +162,4 @@ WIFI_DRIVER_STATE_OFF := "0"
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Inherit the proprietary files
-include vendor/xiaomi/seur/BoardConfigVendor.mk
+include vendor/xiaomi/mt6781/BoardConfigVendor.mk

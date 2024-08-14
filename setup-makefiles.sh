@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=seur
+DEVICE=mt6781
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks

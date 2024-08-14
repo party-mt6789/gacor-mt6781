@@ -4,7 +4,7 @@
  * SPDX-License-Identifer: Apache-2.0
  */
 
-#define LOG_TAG "android.hardware.vibrator-service.seur"
+#define LOG_TAG "android.hardware.vibrator-service.mt6781"
 
 #include "vibrator-impl/Vibrator.h"
 

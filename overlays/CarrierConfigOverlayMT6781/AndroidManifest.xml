@@ -4,11 +4,11 @@
   SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.settings.overlay.seur">
-    
+    package="com.android.carrierconfig.overlay.mt6781">
+
     <application android:hasCode="false" />
     <overlay
-      android:targetPackage="com.android.settings"
+      android:targetPackage="com.android.carrierconfig"
       android:isStatic="true"
-      android:priority="300"/>
+      android:priority="1"/>
 </manifest>

@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=seur
+DEVICE=mt6781
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
@@ -69,7 +69,6 @@ function blob_fixup {
             ;;
         vendor/bin/mnld|\
         vendor/lib*/hw/android.hardware.sensors@2.X-subhal-mediatek.so|\
-        vendor/lib*/libcam.utils.sensorprovider.so|\
         vendor/lib*/librgbwlightsensor.so|\
         vendor/lib*/libaalservice.so)
             "$PATCHELF" --add-needed "libshim_sensors.so" "$2"
@@ -77,23 +76,7 @@ function blob_fixup {
         vendor/lib*/hw/vendor.mediatek.hardware.pq@2.15-impl.so)
             "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
-        vendor/lib64/libmtkcam_stdutils.so)
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-            ;;
-        vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so)
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-            "${PATCHELF}" --add-needed "libcamera_metadata_shim.so" "${2}"
-            ;;
-        vendor/lib64/libmtkcam_featurepolicy.so)
-            # evaluateCaptureConfiguration()
-            xxd -p "${2}" | sed "s/90b0034e88740b9/90b003428028052/g" | xxd -r -p > "${2}".patched
-            mv "${2}".patched "${2}"
-            ;;
-        vendor/bin/hw/camerahalserver)
-            "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-            "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
-            ;;
+
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek)
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
