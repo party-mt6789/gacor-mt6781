@@ -67,7 +67,6 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.selinux=permissive
 
 # Kernel (Prebuilt)
-BOARD_PREBUILT_DTBOIMAGE := $(COMMON_PATH)/prebuilt/dtbo.img
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard device/xiaomi/mt6781-modules/*.ko)
 
 # Partitions
