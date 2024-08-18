@@ -96,7 +96,7 @@ function blob_fixup {
             sed -i '/seclabel/d' "$2"
 	    ;;
 	vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc)
-            sed -i 's/start/enable/' "$2"
+            sed -i 's/"sea"/"fleur"/' "$2"
             ;;
     esac
 }

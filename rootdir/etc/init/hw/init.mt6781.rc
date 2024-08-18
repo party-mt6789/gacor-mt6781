@@ -894,7 +894,10 @@ on boot
     chown system system /sys/bus/platform/devices/aw8622/pwm_ctrl
     chown system system /sys/bus/platform/devices/aw8622/test_cnt
 
+    # Logging
     stop console
+    write /proc/sys/kernel/printk 1 1 1 1
+    write /proc/sys/kernel/printk_devkmsg off
 
     # DT2W
     chown system system /sys/touchpanel/double_tap
@@ -994,7 +997,7 @@ on property:persist.vendor.mediatek.fg.force25c=0
 on property:persist.vendor.mediatek.fg.log.enable=1
     write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
-    write /proc/sys/kernel/printk 8
+    write /proc/sys/kernel/printk 1
 
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
