@@ -14,7 +14,7 @@ allow mi_thermald thermal_data_file:dir rw_dir_perms;
 allow mi_thermald thermal_data_file:file create_file_perms;
 
 allow mi_thermald self:capability { fsetid sys_boot };
-allow mi_thermald mi_thermald:capability { chown fowner dac_override };
+allow mi_thermald mi_thermald:capability { chown fowner };
 allow mi_thermald mi_thermald:capability2 { wake_alarm block_suspend };
 
 r_dir_file(mi_thermald, sysfs_therm)
