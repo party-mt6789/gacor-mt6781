@@ -70,6 +70,11 @@ BOARD_KERNEL_CMDLINE := \
 # Kernel (Prebuilt)
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard device/xiaomi/mt6781-modules/*.ko)
 
+# NFC
+ODM_MANIFEST_SKUS += fleur fleurp
+ODM_MANIFEST_FLEUR_FILES += $(COMMON_PATH)/configs/vintf/manifest_fleur.xml
+ODM_MANIFEST_FLEURP_FILES += $(COMMON_PATH)/configs/vintf/manifest_fleurp.xml
+
 # Partitions
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4

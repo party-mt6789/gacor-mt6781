@@ -11,8 +11,6 @@ on post-fs && property:ro.boot.product.hardware.sku=fleurp
     enable st_nfc_hal
     
 service st_nfc_hal /vendor/bin/hw/android.hardware.nfc-service.st
-    interface android.hardware.secure_element@1.2::ISecureElement SIM1
-    interface android.hardware.secure_element@1.2::ISecureElement SIM2
     class hal
     user nfc
     group nfc
