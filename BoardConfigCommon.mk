@@ -68,7 +68,7 @@ BOARD_KERNEL_CMDLINE := \
     bootopt=64S3,32N2,64N2
 
 # Kernel (Prebuilt)
-BOARD_VENDOR_KERNEL_MODULES := $(wildcard device/xiaomi/mt6781-modules/*.ko)
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(COMMON_PATH)/configs/modules/*.ko)
 
 # NFC
 ODM_MANIFEST_SKUS += fleur fleurp
