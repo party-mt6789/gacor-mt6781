@@ -109,10 +109,6 @@ PRODUCT_PACKAGES += \
     libbinder-v32 \
     libhidlbase-v32
 
-# CAS
-PRODUCT_PACKAGES += \
-    android.hardware.cas@1.2-service-lazy
-
 # Cgroup
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
@@ -229,8 +225,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2@1.2.vendor \
-    android.hardware.media.omx@1.0-service
+    android.hardware.media.c2@1.2.vendor
 
 PRODUCT_PACKAGES += \
     libcodec2_hidl@1.2.vendor \
