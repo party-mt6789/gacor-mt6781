@@ -120,7 +120,7 @@ PRODUCT_COPY_FILES += \
 
 # ConsumerIr
 PRODUCT_PACKAGES += \
-    android.hardware.ir-service.mediatek
+    android.hardware.ir-service.example
 
 # Display
 PRODUCT_PACKAGES += \
