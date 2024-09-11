@@ -14,9 +14,6 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
-# Charger
-ro.charger.enable_suspend=true
-
 # Dalvik
 pm.dexopt.install=speed-profile
 pm.dexopt.bg-dexopt=speed-profile
@@ -34,13 +31,6 @@ dalvik.vm.image-dex2oat-threads=6
 Build.BRAND=MTK
 ro.logd.kernel=false
 
-# MTK
-ro.vendor.mtk_cta_set=1
-ro.vendor.mtk_flv_playback_support=1
-ro.vendor.mtk_omacp_support=1
-ro.vendor.mtk_telephony_add_on_policy=0
-ro.vendor.system.mtk_mapi_support=1
-
 # Radio
 persist.dbg.ims_volte_enable=1 
 persist.dbg.volte_avail_ovr=1 
@@ -52,37 +42,9 @@ persist.radio.data_con_rprt=1
 persist.radio.calls.on.ims=1
 persist.radio.apm_sim_not_pwdn=1
 persist.sys.mdlog_dumpback=2
-persist.vendor.mdlog.flush_log_ratio=72340194296137244
-persist.vendor.mdlog.need_dump=1
 persist.vendor.vzw_device_type=0  
 persist.vendor.wfc.sys_wfc_support=1
-
-# RIL
-vendor.rild.libargs=-d /dev/ttyC0
-vendor.rild.libpath=mtk-ril.so
-ro.telephony.sim.count=2
 
 # Misc
 ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b 
 ro.netflix.signup=1
-
-# Rendering
-ro.hwui.render_ahead=21
-
-# Surface Flinger
-debug.sf.high_fps.early.app.duration=11000000
-debug.sf.high_fps.early.sf.duration=22000000
-debug.sf.high_fps.earlyGl.app.duration=11000000
-debug.sf.high_fps.earlyGl.sf.duration=22000000
-debug.sf.high_fps.hwc.min.duration=17000000
-debug.sf.high_fps.late.app.duration=11000000
-debug.sf.high_fps.late.sf.duration=22000000
-ro.sf.blurs_are_expensive=0
-
-# WiFi
-ro.wifi.channels=
-wifi.direct.interface=p2p0
-wifi.interface=wlan0
-wifi.tethering.interface=ap0
-ro.mediatek.wlan.p2p=1
-ro.mediatek.wlan.wsc=1
