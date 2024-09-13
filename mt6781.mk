@@ -104,11 +104,6 @@ PRODUCT_PACKAGES += \
     libexif.vendor \
     libpng.vendor
 
-PRODUCT_PACKAGES += \
-    libcamera_metadata_shim \
-    libbinder-v32 \
-    libhidlbase-v32
-
 # Cgroup
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
