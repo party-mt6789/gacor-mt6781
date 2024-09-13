@@ -4,7 +4,7 @@
 //
 
 cc_library_shared {
-    name: "android.hardware.sensors@2.0-subhal-impl-1.0",
+    name: "android.hardware.sensors@2.0-subhal.mt6781-impl-1.0",
     defaults: ["hidl_defaults"],
     srcs: [
         "SensorsSubHal.cpp",
