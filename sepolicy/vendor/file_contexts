@@ -26,6 +26,7 @@
 # Sensors
 /dev/elliptic[0-1]                                                                                     u:object_r:sensor_device:s0
 /dev/hardwareinfo(/.*)?                                                                                u:object_r:hardwareinfo_device:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors-service\.xiaomi-multihal                     u:object_r:hal_sensors_default_exec:s0
 
 # Thermal
 /(vendor|system/vendor)/bin/mi_thermald                                                                u:object_r:mi_thermald_exec:s0
