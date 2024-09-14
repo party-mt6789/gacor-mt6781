@@ -596,8 +596,6 @@ vendor/etc/init/init.cccimdinit.rc
 vendor/etc/init/init.wfca.rc
 vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/mtkrild.rc
-vendor/etc/init/vendor.xiaomi.hardware.vsimapp@1.0-service.rc
--vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.vsimapp.xml
 vendor/lib/libcarrierconfig.so
 vendor/lib/libhydra.so
 vendor/lib/libmtkcutils.so
@@ -615,7 +613,6 @@ vendor/lib/libsimlock.so
 vendor/lib/libsimmelock.so
 vendor/lib/libfsmsmartpaparse.so
 vendor/lib/libscltm.so
-vendor/lib/vendor.xiaomi.hardware.vsimapp@1.0.so
 vendor/lib64/libcares_naptr.so
 vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
@@ -653,7 +650,6 @@ vendor/lib64/libtrm.so
 vendor/lib64/libverno.so
 vendor/lib64/libviamipc-ril.so
 vendor/lib64/libvia-ril.so
-vendor/lib64/vendor.xiaomi.hardware.vsimapp@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 
