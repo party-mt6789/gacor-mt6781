@@ -66,6 +66,7 @@ ro.vendor.pq.mtk_ultra_dimming_support=0
 ro.vendor.pq.mtk_blulight_def_support=0
 ro.vendor.mml.mtk_mml_support=0
 ro.vendor.mtk_aal_support=1
+ro.vendor.perf.scroll_opt=true
 ro.vendor.composer_version=2.3
 ro.vendor.display.type=oled
 ro.vendor.colorpick_adjust=true
