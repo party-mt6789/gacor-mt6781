@@ -16,7 +16,6 @@ vendor/lib/libaudiocompensationfilterc.so
 vendor/lib/libaudiocomponentengine_vendor.so
 vendor/lib/libaudiocompensationfilter_vendor.so
 vendor/lib/libaudiocustparam_vendor.so
-vendor/lib/libaudioclient_aidl_conversion.so
 vendor/lib/libaudiodcrflt_vendor.so
 vendor/lib/libaudiofmtconv.so
 vendor/lib/libaudioloudc.so
