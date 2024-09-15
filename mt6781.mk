@@ -275,7 +275,6 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Overlays
 PRODUCT_PACKAGES += \
     ApertureOverlayMT6781 \
-    CarrierConfigOverlayMT6781 \
     FrameworksResOverlayMT6781 \
     SettingsResOverlayMT6781 \
     SystemUIOverlayMT6781 \
