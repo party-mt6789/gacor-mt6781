@@ -415,6 +415,10 @@ PRODUCT_SOONG_NAMESPACES := \
     hardware/google/pixel \
     hardware/google/interfaces
 
+# Tensor Flow Lite
+PRODUCT_PACKAGES += \
+    libtensorflowlite_jni
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.mediatek
