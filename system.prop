@@ -39,3 +39,8 @@ ro.sf.blurs_are_expensive=1
 # Misc
 ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b 
 ro.netflix.signup=1
+
+# ZRAM
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
