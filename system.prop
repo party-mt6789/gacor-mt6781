@@ -19,6 +19,12 @@ bluetooth.profile.sap.server.enabled=true
 Build.BRAND=MTK
 ro.logd.kernel=false
 
+# Perf
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+debug.hwui.render_dirty_regions=false
+
 # Radio
 persist.dbg.ims_volte_enable=1 
 persist.dbg.volte_avail_ovr=1 
