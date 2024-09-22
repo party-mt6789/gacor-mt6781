@@ -2,6 +2,7 @@
 
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6781.usb.rc
+import /vendor/etc/init/hw/init.mt6781.power.rc
 import /vendor/etc/init/hw/init.project.rc
 import /vendor/etc/init/hw/init.sensor_1_0.rc
 import /vendor/etc/init/hw/init.stnfc.rc
@@ -10,12 +11,6 @@ import /vendor/etc/init/hw/init.zram.rc
 
 import /vendor/etc/init/hw/init.modem.rc
 
-on early-init
-    write /proc/bootprof "INIT:early-init"
-    # boot perf. tune
-    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "0 0 0 0"
-    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 1
- 
 on init    
     # M375 Add for sensor calibration command in 20230101 start
     mkdir /mnt/vendor/persist 0771 system system
@@ -31,13 +26,6 @@ on init
     write /proc/sys/net/core/wmem_max 8388608
     write /proc/sys/net/core/rmem_max 8388608
 
-    # CPU Sets
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 0-7
-    write /dev/cpuset/background/cpus 0-5
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/top-app/cpus 0-7
-
     # Report max frequency to unity tasks.
     write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
     write /proc/sys/kernel/sched_lib_mask_force 255
@@ -47,9 +35,6 @@ on late-init
     write /sys/kernel/rcu_expedited 1
 
 on charger
-    write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
-    write /sys/devices/platform/boot_dramboost/dramboost/dramboost 0
-
     chmod 0660 /dev/spm
     chown system system /dev/spm
     start spm_script
@@ -81,9 +66,6 @@ on charger
     # Switch to schedutil
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor "schedutil"
-
-    # Stop bootprof
-    write /proc/bootprof "0"
 
     # Turn backlight on and switch to backlight trigger
     write /sys/class/leds/lcd-backlight/brightness "1000"
@@ -624,10 +606,6 @@ on post-fs-data
     chmod 0664 /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
     chown media media /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
 
-    # mtk_sched
-    chmod 0660 /dev/mtk_sched
-    chown system media /dev/mtk_sched
-
     # BT SCO CVSD, for MT6572 and MT6582 CVSD codec on AP
     chmod 0660 /dev/ebc
     chown media media /dev/ebc
@@ -892,11 +870,6 @@ on property:vold.decrypt=trigger_shutdown_framework
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
-# Stop bootprof
-on property:sys.boot_completed=1
-    write /proc/bootprof "0"
-
-
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B -z \
         -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
@@ -911,11 +884,6 @@ on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/nr_requests 128
     write /sys/block/sdc/queue/iostats 1
     write /sys/block/sdc/queue/nr_requests 128
-
-on property:sys.boot_completed=1
-	
-    # stop bootprof
-    write /proc/bootprof 0
 
     # TouchPad settings
     on property:sys.tp.grip_enable=0

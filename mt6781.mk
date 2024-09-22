@@ -336,7 +336,10 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek
+    android.hardware.power-service.lineage-libperfmgr \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
+    libmtkperf_client_vendor \
+    libmtkperf_client
 
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3.vendor
@@ -345,9 +348,6 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.0.vendor \
     vendor.mediatek.hardware.mtkpower@1.1.vendor \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Power Off Alarm
 PRODUCT_PACKAGES += \
@@ -374,10 +374,10 @@ PRODUCT_PACKAGES += \
 
 # Root Dir
 PRODUCT_PACKAGES += \
-    init.cgroup.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6781.rc \
+    init.mt6781.power.rc
     init.mt6781.usb.rc \
     init.project.rc \
     init.sensor_1_0.rc \
@@ -413,8 +413,10 @@ PRODUCT_SOONG_NAMESPACES := \
     $(COMMON_PATH) \
     hardware/xiaomi \
     hardware/mediatek \
+    hardware/mediatek/libmtkperf_client \
     hardware/google/pixel \
-    hardware/google/interfaces
+    hardware/google/interfaces \
+    hardware/lineage/interfaces/power-libperfmgr
 
 # Tensor Flow Lite
 PRODUCT_PACKAGES += \
