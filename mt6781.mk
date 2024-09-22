@@ -349,6 +349,9 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.1.vendor \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 # Power Off Alarm
 PRODUCT_PACKAGES += \
     PowerOffAlarm
@@ -377,7 +380,7 @@ PRODUCT_PACKAGES += \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6781.rc \
-    init.mt6781.power.rc
+    init.mt6781.power.rc \
     init.mt6781.usb.rc \
     init.project.rc \
     init.sensor_1_0.rc \
