@@ -134,6 +134,10 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_DENSITY := 440
 
+# Dolby
+PRODUCT_PACKAGES += \
+    XiaomiDolby
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
