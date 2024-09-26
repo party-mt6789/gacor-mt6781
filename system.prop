@@ -15,6 +15,9 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=true
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Misc
 Build.BRAND=MTK
 ro.logd.kernel=false
